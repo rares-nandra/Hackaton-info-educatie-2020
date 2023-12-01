@@ -1,0 +1,91 @@
+<!-- 
+    This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with this program.  If not, see <https://www.gnu.org/licenses/>.
+ -->
+
+ <!DOCTYPE html>
+
+ <html>
+    <!-- Meta tags -->
+    <meta charset = "utf-8">
+    <meta name = "viewport" content = "width = device-width, initial-scale = 1, shrink-to-fit = no">
+    <meta name = "language" content = "RO">
+    <meta name = "Classification" content = "Business">
+    <meta name = "description" content = "PersMatch">
+    <meta name = "keywords" content = "PersMatch">
+    <meta name = "author" content = "Nandra Rares,Gruian Tudor">
+    <meta http-equiv = "Expires" content = "0">
+    <meta http-equiv = "Cache-Control" content = "cache">
+     
+    <!-- Title and Icon -->
+    <title>PersMatch - Found Match</title>
+    <link rel = "icon" type = "image/png" href = "Images/Icon.png">
+     
+    <!-- Include Bootsrap -->
+    <link rel = "stylesheet" href = "ThirdParty/Bootstrap/BootstrapCSSMin.css">
+    <script src = "ThirdParty/Bootstrap/BootstrapJQueryMin.js"></script>
+    <script src = "ThirdParty/Bootstrap/BootstrapJSMin.js"></script>
+ 
+    <!-- Include Icons -->
+    <link rel = "stylesheet" href = "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <!-- Include JQuery -->
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity = "sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+ 
+    <!-- Include CSS -->
+    <link rel = "stylesheet" type = "text/css" href = "style.css">
+ 
+    <!-- Include Script -->
+    <script src = "script.js"></script>
+
+    <!-- Top navigation bar -->
+    <div class = "TopNavigationBar">
+        <img id = "NavigationBarIcon" src = "Images/Icon.png" height= "75" width = "75">
+    </div>
+
+    <!-- Profile Card -->
+    <div class = "container Nume">
+        <div class = "row">
+            <div class = "col-lg-6">
+                <div class = "container ProfileCardFound">
+                    <img class = "ProfileImage" src = "Images/Icon.png" style = "width:100%;">
+                    <h1 id = "Username"></h1>
+                    <p class = "ProfileTitle" id = "Age"></p>
+                    <a class = "ProfileInstagramLink" id = "Instagram"></a>
+                </div>
+            </div>
+
+            <div class = "col-lg-6">
+                <!-- Profile Card Match -->
+                <div class = "container ProfileCardFound">
+                    <img class = "ProfileImageTwo" src = "Images/Icon.png" style = "width:100%;">
+                    <h1 id = "UsernameTwo"></h1>
+                    <p class = "ProfileTitle" id = "AgeTwo"></p>
+                    <a class = "ProfileInstagramLink" id = "InstagramTwo"></a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Score -->
+    <div class = "container">
+        <h3 id = "Scor">Scor: 0</h3>
+    </div>
+
+    <!-- Match / Matching Button -->
+    <div class = "container">
+        <a class = "ButtonLink" id = "MatchingButton">Incepeti sa vorbiti!</a>
+    </div>
+
+    
+    <script src = "MatchFoundScript.js"></script>

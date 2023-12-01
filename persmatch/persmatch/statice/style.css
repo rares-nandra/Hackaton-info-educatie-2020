@@ -1,0 +1,541 @@
+/* Imports */
+@import url('https://fonts.googleapis.com/css?family=Work+Sans:400,600');
+@import url(https://use.fontawesome.com/releases/v5.0.6/css/all.css);
+
+/* Universal CSS */
+*,
+*:before,
+*:after 
+{
+  box-sizing: border-box;
+}
+
+body
+{
+  margin: 0;
+  background-color: #304050;
+  font-family: "Poppins", Helvetica, sans-serif;
+  font-weight: 800;
+}
+
+button 
+{
+  border: none;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+button:hover 
+{
+  opacity: 0.8;
+  transform: scale(1.05);
+}
+
+.ButtonLink
+{
+	background-color: #304050;
+  border-radius: 50px;
+	border: 2px solid #007CED;
+	display: inline-block;
+	cursor: pointer;
+	color: #dadada;
+  padding: 10px 60px;
+  text-decoration: none;
+  transition: transform 0.2s;
+  margin-left: 10%;
+}
+
+.ButtonLink:hover 
+{
+  background-color: #007CED;
+  color: #dadada;
+  text-decoration: none;
+  transform: scale(1.1);
+}
+
+@media only screen and (max-width: 800px) 
+{
+  .ButtonLink
+  {
+    padding: 10px 30px;
+  }
+}
+
+@media only screen and (max-width: 634px)
+{
+  .ButtonLink
+  {
+    margin-left: 0;
+    margin-top: 10%;
+  }
+} 
+
+img
+{
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+img:hover
+{
+  transform: scale(1.1);
+}
+
+h1, h2, h3, h4, h5, h6
+{
+  color: rgb(185, 185, 185);
+}
+
+/* Login form */
+
+.LoginCard
+{
+  width: 70%;
+  text-align: center;
+  margin-top: 2.5%;
+}
+
+#Logo
+{
+  border-radius: 50%;
+  border: 2px solid white;
+}
+
+#Logo:hover
+{
+  opacity: 90%;
+}
+
+input[type = text], input[type = password]
+{
+  width: 80%;
+  margin-top: 5%;
+  padding: 12px 20px;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+
+#LoginButton
+{
+  background-color: #4CAF50;
+  color: white;
+  width: 80%;
+  margin-top: 5%;
+  margin-bottom: 5%;
+  padding: 14px 20px;
+}
+
+@media screen and (max-width: 800px) 
+{
+  input[type = text], input[type = password]
+  {
+    margin-top: 10%;
+  }
+
+  #LoginButton
+  {
+    margin-top: 10%;
+    margin-bottom: 10%;
+  }
+}
+
+/* Pop up Personality Form */
+
+#overlay 
+{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #000;
+  filter:alpha(opacity=70);
+  -moz-opacity:0.7;
+  -khtml-opacity: 0.7;
+  opacity: 0.6;
+  z-index: 100;
+  display: none;
+}
+
+.PopUpCard a
+{
+  text-decoration: none;
+}
+
+.popup
+{
+  width: 100%;
+  margin: 0 auto;
+  display: none;
+  position: fixed;
+  z-index: 101;
+}
+  
+.PopUpCard
+{
+  margin-top: 7.5%;
+  margin-left: 10%;
+  width: 80%;
+  background: rgb(185, 185, 185);
+  position: relative;
+  z-index: 103;
+  padding: 15px 35px;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px #000;
+  padding-bottom: 5%;
+}
+
+@media screen and (max-width: 800px) 
+{
+  .PopUpCard
+  {
+    margin-top: 0%;
+    padding-bottom: 10%;
+  }
+}
+  
+.PopUpCard p
+{
+  clear: both;
+  font-size: 20px;
+}
+
+.close
+{
+  opacity: 100%;
+}
+
+.close:hover
+{
+  opacity: 100%;
+}
+
+/* Top Navigation Bar */
+
+.TopNavigationBar
+{
+  overflow: hidden;
+  background-color: rgb(185, 185, 185);
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 99;
+}
+
+#NavigationBarIcon
+{
+  border-radius: 50%;
+  padding: 0.5%;
+}
+
+/* Personality Form */
+
+.PersonalityForm
+{
+  margin-top: 10%;
+  margin-left: 15%;
+  width: 70%;
+  text-align: center;
+}
+
+@media screen and (max-width: 800px) 
+{
+  .PersonalityForm
+  {
+    margin-top: 25%;
+  }
+}
+
+#PersonalityInput
+{
+  width: 85%;
+  padding: 12px 20px;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+
+#PersonalityTextInput
+{
+  width: 85%;
+  margin-top: 0%;
+}
+
+#InputLabel
+{
+  margin-top: 5%;
+}
+
+#SendInfoButton
+{
+  background-color: #4CAF50;
+  color: white;
+  margin-top: 5%;
+  margin-bottom: 5%;
+  padding: 14px 20px;
+  width: 85%;
+}
+
+#PhotoUpload
+{
+  margin-left: 7.5%;
+  width: 85%;
+  color: rgb(185, 185, 185);
+  border: 2px solid rgb(185, 185, 185);
+}
+
+@media screen and (max-width: 800px) 
+{
+  #InputLabel
+  {
+    margin-top: 15%;
+  }
+
+  #PersonalityInput
+  {
+    width: 100%;
+  }
+
+  #PersonalityTextInput
+  {
+    width: 100%;
+  }
+
+  #SendInfoButton
+  {
+    width: 100%;
+    margin-top: 10%;
+    margin-bottom: 10%;
+  }
+}
+
+/* 404 page */
+.fof
+{
+  margin-top: 20%;
+  text-align: center;
+}
+
+#fofBack
+{
+  text-align: center;
+  width: 40%;
+  margin-top: 10%;
+  margin-left: 30%;
+}
+
+/* Home Page Card */
+
+.ProfileCard 
+{
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  max-width: 300px;
+  margin: auto;
+  text-align: center;
+  margin-top: 9%;
+  padding-bottom: 1%;
+}
+
+@media screen and (max-width: 1100px) 
+{
+  .ProfileCard
+  {
+    margin-top: 12.5%;
+  }
+}
+
+@media screen and (max-width: 900px) 
+{
+  .ProfileCard
+  {
+    margin-top: 15%;
+  }
+}
+
+@media screen and (max-width: 600px) 
+{
+  .ProfileCard
+  {
+    margin-top: 22.5%;
+  }
+}
+
+.ProfileTitle 
+{
+  color: rgb(185, 185, 185);
+  font-size: 18px;
+}
+
+.ProfileButton
+{
+  border: none;
+  outline: 0;
+  display: inline-block;
+  padding: 8px;
+  color: white;
+  text-align: center;
+  cursor: pointer;
+  width: 100%;
+  font-size: 18px;
+}
+
+.ProfileInstagramLink
+{
+  text-decoration: none;
+  font-size: 22px;
+}
+
+.ProfileButton:hover, .ProfileImage:hover, .ProfileImageTwo:hover
+{
+  opacity: 0.7;
+  transform: scale(1);
+}
+
+#MatchingButton
+{
+  text-align: center;
+  width: 30%;
+  margin-top: 2.5%;
+  margin-left: 35%;
+}
+
+@media screen and (max-width: 800px) 
+{
+  #MatchingButton
+  {
+    width: 50%;
+    margin-top: 5%;
+    margin-left: 25%;
+  }
+}
+
+/* Loading Page */
+.loader 
+{
+  position: absolute;
+  left: 50%;
+  top: 30%;
+  margin-left: -60px;
+  border: 16px solid rgb(185, 185, 185);
+  border-top: 16px solid #3498db;
+  border-radius: 50%;
+  width: 120px;
+  height: 120px;
+  animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+#QuitMatchingButton
+{
+  text-align: center;
+  width: 30%;
+  margin-top: 40%;
+  margin-left: 35%;
+}
+
+@media screen and (max-width: 1000px) 
+{
+  #QuitMatchingButton
+  {
+    width: 50%;
+    margin-top: 60%;
+    margin-left: 25%;
+  }
+}
+
+
+@media screen and (max-width: 700px) 
+{
+  #QuitMatchingButton
+  {
+    width: 50%;
+    margin-top: 70%;
+    margin-left: 25%;
+  }
+}
+
+@media screen and (max-width: 550px) 
+{
+  #QuitMatchingButton
+  {
+    width: 50%;
+    margin-top: 90%;
+    margin-left: 25%;
+  }
+}
+
+@media screen and (max-width: 400px) 
+{
+  #QuitMatchingButton
+  {
+    width: 50%;
+    margin-top: 110%;
+    margin-left: 25%;
+  }
+}
+
+@media screen and (max-width: 300px) 
+{
+  #QuitMatchingButton
+  {
+    width: 50%;
+    margin-top: 140%;
+    margin-left: 25%;
+  }
+}
+
+#MatchingTitle
+{
+  margin-top: 5%;
+  text-align: center;  
+}
+
+/* Match found */
+
+.ProfileCardFound
+{
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  max-width: 300px;
+  text-align: center;
+  margin-top: 9%;
+  padding-bottom: 1%;
+}
+
+@media screen and (max-width: 1100px) 
+{
+  .ProfileCardFound
+  {
+    margin-top: 12.5%;
+  }
+}
+
+@media screen and (max-width: 900px) 
+{
+  .ProfileCardFound
+  {
+    margin-top: 15%;
+  }
+}
+
+@media screen and (max-width: 600px) 
+{
+  .ProfileCardFound
+  {
+    margin-top: 22.5%;
+  }
+}
+
+.Nume
+{
+  margin-top: 5%;
+}
+
+#Scor
+{
+  text-align: center;
+}

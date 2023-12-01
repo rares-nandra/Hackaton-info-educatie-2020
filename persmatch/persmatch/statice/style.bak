@@ -1,0 +1,128 @@
+/* Imports */
+@import url('https://fonts.googleapis.com/css?family=Work+Sans:400,600');
+@import url(https://use.fontawesome.com/releases/v5.0.6/css/all.css);
+
+/* Universal CSS */
+*,
+*:before,
+*:after 
+{
+  box-sizing: border-box;
+}
+
+body
+{
+  margin: 0;
+  background-color: #304050;
+  font-family: "Poppins", Helvetica, sans-serif;
+  font-weight: 800;
+}
+
+button 
+{
+  border: none;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+button:hover 
+{
+  opacity: 0.8;
+  transform: scale(1.05);
+}
+
+.ButtonLink
+{
+	background-color: #304050;
+  border-radius: 50px;
+	border: 2px solid #007CED;
+	display: inline-block;
+	cursor: pointer;
+	color: #dadada;
+  padding: 10px 60px;
+  text-decoration: none;
+  transition: transform 0.2s;
+  margin-left: 10%;
+}
+
+.ButtonLink:hover 
+{
+  background-color: #007CED;
+  color: #dadada;
+  text-decoration: none;
+  transform: scale(1.1);
+}
+
+@media only screen and (max-width: 800px) 
+{
+  .ButtonLink
+  {
+    padding: 10px 30px;
+  }
+}
+
+@media only screen and (max-width: 634px)
+{
+  .ButtonLink
+  {
+    margin-left: 0;
+    margin-top: 10%;
+  }
+} 
+
+/* Login form */
+
+.LoginCard
+{
+  width: 70%;
+  text-align: center;
+  margin-top: 2.5%;
+}
+
+#Logo
+{
+  border-radius: 50%;
+  border: 2px solid white;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+#Logo:hover
+{
+  transform: scale(1.1);
+  opacity: 90%;
+}
+
+input[type = text], input[type = password]
+{
+  width: 80%;
+  margin-top: 5%;
+  padding: 12px 20px;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+
+#LoginButton
+{
+  background-color: #4CAF50;
+  color: white;
+  width: 80%;
+  margin-top: 5%;
+  margin-bottom: 5%;
+  padding: 14px 20px;
+}
+
+@media screen and (max-width: 800px) 
+{
+  input[type = text], input[type = password]
+  {
+    margin-top: 10%;
+  }
+
+  #LoginButton
+  {
+    margin-top: 10%;
+    margin-bottom: 10%;
+  }
+}

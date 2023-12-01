@@ -1,0 +1,166 @@
+<!-- 
+    This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with this program.  If not, see <https://www.gnu.org/licenses/>.
+ -->
+
+ <!DOCTYPE html>
+
+ <html>
+    <!-- Meta tags -->
+    <meta charset = "utf-8">
+    <meta name = "viewport" content = "width = device-width, initial-scale = 1, shrink-to-fit = no">
+    <meta name = "language" content = "RO">
+    <meta name = "Classification" content = "Business">
+    <meta name = "description" content = "PersMatch">
+    <meta name = "keywords" content = "PersMatch">
+    <meta name = "author" content = "Nandra Rares,Gruian Tudor">
+    <meta http-equiv = "Expires" content = "0">
+    <meta http-equiv = "Cache-Control" content = "cache">
+     
+    <!-- Title and Icon -->
+    <title>PersMatch - HomePage</title>
+    <link rel = "icon" type = "image/png" href = "statice/Images/Icon.png">
+     
+    <!-- Include Bootsrap -->
+    <link rel = "stylesheet" href = "statice/ThirdParty/Bootstrap/BootstrapCSSMin.css">
+    <script src = "statice/ThirdParty/Bootstrap/BootstrapJQueryMin.js"></script>
+    <script src = "statice/ThirdParty/Bootstrap/BootstrapJSMin.js"></script>
+ 
+    <!-- Include Icons -->
+    <link rel = "stylesheet" href = "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <!-- Include JQuery -->
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity = "sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+ 
+    <!-- Include CSS -->
+    <link rel = "stylesheet" type = "text/css" href = "statice/style.css">
+ 
+    <!-- Include Script -->
+    <script src = "statice/script.js"></script>
+
+    <!-- Top navigation bar -->
+    <div class = "TopNavigationBar">
+        <img id = "NavigationBarIcon" src = "statice/Images/Icon.png" height= "75" width = "75">
+    </div>
+
+    <!-- Profile Card -->
+    <div class = "container ProfileCard">
+        <img class = "ProfileImage" id= "ppic" src = "statice/Images/Icon.png" style = "width:100%;">
+        <h1 id = "Username"></h1>
+        <p class = "ProfileTitle" id = "Age"></p>
+        <a class = "ProfileInstagramLink" id = "Instagram"></a>
+    </div>
+
+    <!-- Match / Matching Button -->
+    <div class = "container">
+        <a class = "ButtonLink" id = "MatchingButton" onclick = "InitMatch()">Match / Matching</a>
+    </div>
+
+    
+    <script>
+        var UsernameElement = document.getElementById("Username")
+        var AgeElement = document.getElementById("Age")
+        var InstagramElement = document.getElementById("Instagram")
+        var ButtonElement = document.getElementById("MatchingButton")
+
+        var xhttp = new XMLHttpRequest(); 
+        const urlParams = new URLSearchParams(window.location.search);
+        const ids = urlParams.get('ids'); //id_sesiune fetched
+        
+        var UserUsername = "Tuxi Pinguinescu"
+        xhttp.open("GET", "nume?ids=" + ids, false);
+        xhttp.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
+                // alert("avc");
+                UserUsername = this.responseText;
+                // alert(this.responseText);
+            }
+        };
+        xhttp.send();
+
+        var UserAge = "20"
+        xhttp.open("GET", "varsta?ids=" + ids, false);
+        xhttp.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
+                // alert("avc");
+                UserAge = this.responseText;
+                // alert(this.responseText);
+            }
+        };
+        xhttp.send();
+
+
+        var UserInstagram = "tuxi._.pinguinescu"
+        xhttp.open("GET", "instagram?ids=" + ids, false);
+        xhttp.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
+                // alert("avc");
+                UserInstagram = this.responseText;
+                // alert(this.responseText);
+            }
+        };
+        xhttp.send();
+        var InstagramLink = "https://www.instagram.com/" + String(UserInstagram) + "/"
+
+
+
+        var MatchState = "false" // true daca e matched false daca trb sa caute match
+
+        xhttp.open("GET", "isMatched?ids=" + ids, false);
+        xhttp.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
+                // alert("avc");
+                MatchState = this.responseText;
+            }
+        };
+        xhttp.send();
+
+        document.getElementById('ppic').src=("avatar?ids=" + ids)
+
+
+        if(MatchState == "true")
+        {
+            var UsernameMatch = "user la gagica"
+            xhttp.open("GET", "matchedWith?ids=" + ids, false);
+            xhttp.onreadystatechange = function() {
+                if (this.readyState == 4 && this.status == 200) {
+                    // alert("avc");
+                    UsernameMatch = this.responseText;
+                }
+            };
+            xhttp.send();
+            var ButtonMatch = "Continua conversatia cu " + String(UsernameMatch)
+            var RedirectLink = "chat?ids=" + ids
+        }
+        else
+        {
+            var ButtonMatch = "Cauta Match"
+            var RedirectLink = "match?ids=" + ids
+        }
+
+        UsernameElement.textContent = UserUsername;
+        AgeElement.textContent = UserAge;
+        InstagramElement.textContent = UserInstagram;
+        InstagramElement.setAttribute('href', InstagramLink);
+        ButtonElement.textContent = ButtonMatch;
+        ButtonElement.setAttribute("href", RedirectLink)
+        
+        // function InitMatch()
+        // {
+        //     if(MatchState == "false")
+        //     {
+        //         //plm cod
+        //     }
+        // }
+    
+    </script>
